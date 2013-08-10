@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8' />
+        <meta name="description" content="Deividy Metheler blog" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/assets/styles/theme.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/assets/styles/styles.css">
+        <script src='/scripts/main.js'></script>
+        <title>{{ page.title }}</title>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        < ![endif]-->
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <div id="header_wrap" class="outer">
+            <header class="inner">
+                <a id="home_link" href="/">Posts</a>
+                <a id="about_link" href="http://deividy.com" target='_blank'>Sobre</a>
+
+                <h1 id="project_title">Deividy's coding blog</h1>
+            </header>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+                {{ content }}
+            </section>
+        </div>
+
+        <!-- FOOTER  -->
+        <div id="footer_wrap" class="outer">
+            <footer class="inner">
+                <p>Fork me on <a href="http://github.com/Deividy/deividy.github.io" target='_blank'>Github</a></p>
+            </footer>
+        </div>
+    </body>
+</html>
