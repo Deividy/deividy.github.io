@@ -6,13 +6,11 @@ title: Deividy's coding blog
 
 <div class="hfeed">
     {% for post in paginator.posts %}
-        <article class="hentry entry">
+        <article id='{{ post.title }}' class="hentry entry">
             <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
-            {% if post.content.size > 2000 %}
-                {{ post.content | truncatewords: 300 }} 
+            {{ post.content | split:'<!--break-->' | first }}
+            {% if post.content contains '<!--break-->' %}
                 <a href="{{ post.url }}">read more</a>
-            {% else %}
-                {{ post.content }}
             {% endif %}
         </article>
     {% endfor %}
