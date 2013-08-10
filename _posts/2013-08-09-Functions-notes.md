@@ -27,6 +27,7 @@ Expression are evaluated to produce a value, but statements are executed to make
  - If a function hit a return statement it stops the execution of the function and return the value of its expression (if any) to the caller.
  - If a function does not contain a return statement, it simply executes each statement in the function body and returns the undefined value to the caller.
 
+<!--break-->
 ### Invoking functions
 
 #### as functions
@@ -52,9 +53,6 @@ Expression are evaluated to produce a value, but statements are executed to make
  To do a method chaining we need to return the context (this) of the function is executed to the caller, then we can do things like:
 
         me.method1().method2().method3().run();
-
-
-<!--break-->
 
 #### as constructors
  If a function or method invocation is preceded by the keyword new, then it is a constructor invocation.
@@ -191,64 +189,65 @@ The scope chain is some like a list of objects.
    - If those nested functions objects remained within their outer function, however, then they themselves will be garbage collected, along with the variable binding object they referred to.
    - If the function defines a nested function and returns it or stores it into a property somewhere, then there will be an external reference to the nested function. It won't be garbage collected, and the variable binding object it referes to won't be garbage collected
 
-        var uniqueInterger = (function() {
-            var counter = 0;
-            return function () {
-                return counter++;
-            }
-        }());
+---
 
-        function counter (n) {
-            return {
-                get count() { 
-                    return n++; 
-                },
-                set count(newValue) {
-                    if (newValue >= n) {
-                        n = newValue;
-                    } else {
-                        throw Error("count can only be st to a larger value");
-                    }
+    var uniqueInterger = (function() {
+        var counter = 0;
+        return function () {
+            return counter++;
+        }
+    }());
+    function counter (n) {
+        return {
+            get count() { 
+                return n++; 
+            },
+            set count(newValue) {
+                if (newValue >= n) {
+                    n = newValue;
+                } else {
+                    throw Error("count can only be st to a larger value");
                 }
             }
         }
+    }
 
-        var c = counter(5);
-        console.log(c.count);           // => 5
-        console.log(c.count);           // => 6
-        c.count = 2000;
-        console.log(c.count);           // => 2000
-        c.count = 2000;                 // => Error!
+    var c = counter(5);
+    console.log(c.count);           // => 5
+    console.log(c.count);           // => 6
+    c.count = 2000;
+    console.log(c.count);           // => 2000
+    c.count = 2000;                 // => Error!
 
-        function addPrivateProperty(o, name, predicate) {
-            var value;
+    function addPrivateProperty(o, name, predicate) {
+        var value;
 
-            o["get" + name] = function () { 
-                return value; 
-            };
+        o["get" + name] = function () { 
+            return value; 
+        };
 
-            o["set" + name] = function (v) {
-                if (predicate && !predicate(v)) {
-                    throw Error("set" + name + ": invalid value " + v);
-                }
-                value = v;
-            };
-        }
+        o["set" + name] = function (v) {
+            if (predicate && !predicate(v)) {
+                throw Error("set" + name + ": invalid value " + v);
+            }
+            value = v;
+        };
+    }
 
-        var o = { };
-        addPrivateProperty(o, 'Name', function (v) {
-            return typeof v == "string"; 
-        });
+    var o = { };
+    addPrivateProperty(o, 'Name', function (v) {
+        return typeof v == "string"; 
+    });
 
-        addPrivateProperty(o, 'LastName', function (v) {
-            return typeof v == "string"; 
-        });
+    addPrivateProperty(o, 'LastName', function (v) {
+        return typeof v == "string"; 
+    });
 
 
-        o.setName('Deividy');
-        o.setLastName('Metheler');
-        console.log(o.getName() + " " + o.getLastName());       // => Deividy Metheler
-        o.setName(o);                                           // => throw error
+    o.setName('Deividy');
+    o.setLastName('Metheler');
+    console.log(o.getName() + " " + o.getLastName());       // => Deividy Metheler
+    o.setName(o);                                           // => throw error
 
 Nested functions do not make private copies of the scope or make static snapshots of the variable binds, the scope chain associated with a closure is "live".
 Every function invocation has a this value, and a closure cannot access the this value of its outer function unless the outer function has saved that value into a variable.

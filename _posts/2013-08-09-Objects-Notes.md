@@ -24,6 +24,7 @@ In addition to its properties, every object has three associated object attribut
  - An object's class is a string that categorizes the type of an object.
  - An object's extensible flag specifies (in ECMAScript 5) wheter new properties may be added to the object.
 
+<!--break-->
 Some terms we'll use to distinguish among three broad categories of JS objects and two types of properties:
  - A native object is an object or class of objects defined by the ECMAScript specification.
  - A host object is an object defined by the host environment (such as a web browser) within which the JS interpreter is embedded.
@@ -53,8 +54,6 @@ Some terms we'll use to distinguish among three broad categories of JS objects a
 
  IE, and some implementations of ECMAScript 3, consider a trailing comma following the last property in an object literal an error, other implementations ignore it.
  An object literal is an expression that creates and initializes a new and distinct object each time it is evaluted. The value of each property is evaluated each time the literal is evaluted. This means that a single object literal can create many new objects if it appears within the body of a loop in a function that is called repeatedly, and that the property values of these objects may differ from each other.
-
-<!--break-->
 
 #### Creating objects with new
 

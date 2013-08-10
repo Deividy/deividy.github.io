@@ -40,6 +40,8 @@ A array will never have an element whose index is greather or equal to its lengt
 
 Deleting an array element is similar to (but subtly different than) assigning undefined to that element. Note that using delete on an array element does not alter the length property and does not shift elements with higher indexes down to fill in the gap that is left by the deleted property. If you delete an element from an array, the array becomes sparse.
 
+<!--break-->
+
     var keys = Object.keys(a);
     var values = [ ];
     for (var i = 0, len = keys.length; i < len; i++) {
@@ -76,7 +78,6 @@ JS does not support true multidimensional arrays, but you can approximate them w
 
     var product = table[5][7];          // => 35
 
-<!--break-->
 
 ### Array methods
 
