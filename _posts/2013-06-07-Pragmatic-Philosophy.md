@@ -2,6 +2,7 @@
 
 layout: default
 title: Pragmatic Philosophy
+comments: true
 
 ---
 

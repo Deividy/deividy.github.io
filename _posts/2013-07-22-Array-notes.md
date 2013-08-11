@@ -2,6 +2,7 @@
 
 layout: default
 title: Array Notes
+comments: true
 
 ---
 

@@ -2,6 +2,7 @@
 
 layout: default
 title: JavaScript Wrapper Objects
+comments: true
 
 ---
 

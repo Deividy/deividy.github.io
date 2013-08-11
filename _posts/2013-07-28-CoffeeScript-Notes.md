@@ -2,6 +2,7 @@
 
 layout: default
 title: CoffeeScript Accelerated JavaScript Development
+comments: true
 
 ---
 

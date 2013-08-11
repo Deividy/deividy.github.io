@@ -2,6 +2,7 @@
 
 layout: default
 title: Lexical Structure Notes
+comments: true
 
 ---
 

@@ -2,6 +2,7 @@
 
 layout: default
 title: Object notes
+comments: true
 
 ---
 

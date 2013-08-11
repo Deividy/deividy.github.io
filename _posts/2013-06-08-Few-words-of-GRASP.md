@@ -2,6 +2,7 @@
 
 layout: default
 title: A few words about GRASP
+comments: true
 
 ---
 

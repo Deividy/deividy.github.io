@@ -11,6 +11,8 @@ title: Deividy's coding blog
             {{ post.content | split:'<!--break-->' | first }}
             {% if post.content contains '<!--break-->' %}
                 <a href="{{ post.url }}">read more</a>
+            {% else %}
+                <a href="{{ post.url }}#disqus_thread">comment</a>
             {% endif %}
         </article>
     {% endfor %}

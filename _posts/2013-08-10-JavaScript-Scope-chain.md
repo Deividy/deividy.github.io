@@ -2,6 +2,7 @@
 
 layout: default
 title: JavaScript Scope Chain
+comments: true
 
 ---
 

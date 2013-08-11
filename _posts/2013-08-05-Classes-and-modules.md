@@ -2,6 +2,7 @@
 
 layout: default
 title: JS Classes and Modules notes
+comments: true
 
 ---
 
