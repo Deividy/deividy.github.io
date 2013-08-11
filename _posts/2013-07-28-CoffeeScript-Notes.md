@@ -7,7 +7,7 @@ title: CoffeeScript Accelerated JavaScript Development
 
 # CoffeeScript Notes
 
-Knowledge from [CoffeeScript Accelerated JavaScript Development](http://pragprog.com/book/tbcoffee/coffeescript).
+This is my study book of [CoffeeScript Accelerated JavaScript Development](http://pragprog.com/book/tbcoffee/coffeescript).
 
 ### Embedding JS in CS
  - Just put your JS code surrounding it with backticks

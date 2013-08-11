@@ -7,7 +7,7 @@ title: JS Classes and Modules notes
 
 # JS Classes and Modules
 
-Knowledge from [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
+This is my study book of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
 
  In JS, classes are based on JS's prototype-based inheritance mechanism. If two objects inherit properties from the same prototype object, then we say that they are instances of the same class.
  One of the most important features of JS classes is that the are dynamically extendable.

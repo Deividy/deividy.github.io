@@ -7,10 +7,7 @@ title: Pragmatic Philosophy
 
 # Pragmatic Philosophy
 
-This is all my notes about the [Pragmatic Programmer](http://pragprog.com/the-pragmatic-programmer), 
-everyone should buy and read this book.
-
-It's a bible for a programmer.
+This is my study book of [Pragmatic Programmer (The Bible)](http://pragprog.com/the-pragmatic-programmer).
 
 ### Remember the big picture!
 
