@@ -5,7 +5,10 @@ title: Object notes
 
 ---
 
-# Object notes
+# JS Object
+
+My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
+
  An Object is an unordered collection of properties, each of which has a name and a value. Property names are strings, so we can say that object map strings to values. This string-to-value mapping goes by various names: "hash", "hashtable", "dictionary" or "associative array". An Object is more than a simple string-to-value map, however.
  A JS Object also inherits the properties of another object, know as its "prototype".
  Any value in JS that is not a string, a number, true, false, null or undefined is an object. And even though strings, numbers, and booleans are not objects, they behave like immutable objets.

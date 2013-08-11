@@ -5,7 +5,9 @@ title: Array Notes
 
 ---
 
-# Array notes
+# JS Array
+
+My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
 
 JS arrays are a specialized form of JS Object, and array indexes are really little more than property names that happen to be integers. 
 

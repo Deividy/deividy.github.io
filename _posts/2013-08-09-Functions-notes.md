@@ -5,8 +5,10 @@ title: Function notes
 
 ---
 
-# Function notes
+# JS Function
  
+My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
+
  JS functions definitions can be nested within other functions, and they have access to any variable that are in scope where they are defined. This means that JS functions are closures. (I got the power!)
 
  - Functions can be defined:
