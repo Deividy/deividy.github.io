@@ -21,6 +21,7 @@
 .post-date {
     float: right;
 }
-.pagination {
+div.pagination {
     margin-top:20px;
 }
+

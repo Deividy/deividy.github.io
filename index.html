@@ -19,13 +19,12 @@ title: Deividy's coding blog
 <!-- Pagination links -->
 <div class="pagination">
     {% if paginator.previous_page %}
-        <p class="previous">
         {% if paginator.previous_page == 1 %}
             <a href="/">Anterior</a>
         {% else %}
             <a href="{{ paginator.previous_page_path }}">Anterior</a>
         {% endif %}
-        </p>
+        &nbsp; &nbsp; &nbsp; 
     {% endif %}    {% if paginator.next_page %}
         <a href="/page{{ paginator.next_page }}" class="next">Próximo</a>
     {% endif %}
