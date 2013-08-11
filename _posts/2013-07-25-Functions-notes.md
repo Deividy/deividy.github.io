@@ -7,16 +7,17 @@ title: Function notes
 
 # JS Function
  
-My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
+Knowledge from [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 
  JS functions definitions can be nested within other functions, and they have access to any variable that are in scope where they are defined. This means that JS functions are closures. (I got the power!)
 
- - Functions can be defined:
-    
+**Functions can be defined:**
+
     var fn = function (args) { };
     var fn = function fun(args) { };
     var fn = (function() { }());
     function fn () {  }
+
 
 Any legal JavaScript identifier can be a function name. Try to choose function names that are descriptive but concise. Striking the right balance is an art that comes with experience. Well-chosen function names can make a big difference in the readability (and thus maintainability) of your code.
 
@@ -54,7 +55,7 @@ Expression are evaluated to produce a value, but statements are executed to make
 ##### Method chaining
  To do a method chaining we need to return the context (this) of the function is executed to the caller, then we can do things like:
 
-        me.method1().method2().method3().run();
+    me.method1().method2().method3().run();
 
 #### as constructors
  If a function or method invocation is preceded by the keyword new, then it is a constructor invocation.
@@ -117,50 +118,50 @@ This special behavior of the Arguments object has been removed in the strict mod
  JS has function scope: variables declared within a function are visible throughout the function (including nested functions) but do not exist outside of the function.
  Variables declared outside of a function are global variables and are visible throughout your JS program. JS does not define any way to declare variables that are hidden within a single block of code, and for this reason, it is sometimes useful to define a function simply to act as a temporary namespace in which you can define variables without polluting the global namespace.
 
-        // anonymous
-        (function() {
-            // do something
-        }());
+    // anonymous
+    (function() {
+        // do something
+    }());
 
-        var extend = (function () {
-           // Check the presence of an IE bug: in many versions of IE, the for/in loop
-           // won't enumerate an enumerable property of o if the prototype of o has a non enumerable property by the same name.
-           // This means that properties like toString are not handled correctly unless we explicitly check for them.
-           for (var p in { toString: null }) {
-               return function extend(o) {
-                   for (var i = 1; i < arguments.length; i ++) {
-                       var source = arguments[i];
-                       for (var prop in source) {
-                           o[prop] = source[prop];
-                       }
-                   }
-                   return o;
-               };
-           }
+    var extend = (function () {
+        // Check the presence of an IE bug: in many versions of IE, the for/in loop
+        // won't enumerate an enumerable property of o if the prototype of o has a non enumerable property by the same name.
+        // This means that properties like toString are not handled correctly unless we explicitly check for them.
+        for (var p in { toString: null }) {
+            return function extend(o) {
+                for (var i = 1; i < arguments.length; i ++) {
+                    var source = arguments[i];
+                    for (var prop in source) {
+                        o[prop] = source[prop];
+                    }
+                }
+                return o;
+            };
+        }
 
-           // If we get here, it means that the for/in loop did not enumerate the toString property
-           // of the test object. So return a version of extend() function that explicitly tests for the
-           // nonenumerable properties of Object.prototype
-           return function patched_extend(o) {
-               for (var i = 1; i < arguments.length; i++) {
-                   var source = arguments[i];
-                   for (var prop in source) {
-                       o[prop] = source[prop];
-                   }
+        // If we get here, it means that the for/in loop did not enumerate the toString property
+        // of the test object. So return a version of extend() function that explicitly tests for the
+        // nonenumerable properties of Object.prototype
+        return function patched_extend(o) {
+            for (var i = 1; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var prop in source) {
+                    o[prop] = source[prop];
+                }
 
-                   for (var j = 0; j < protoprops.length; j++) {
-                       prop = protoprops[j];
-                       if (source.hasOwnProperty(prop)) {
-                           o[prop] = source[prop];
-                       }
-                   }
-               }
-               return o;
-           };
+                for (var j = 0; j < protoprops.length; j++) {
+                    prop = protoprops[j];
+                    if (source.hasOwnProperty(prop)) {
+                        o[prop] = source[prop];
+                    }
+                }
+            }
+            return o;
+        };
 
-           var protoprops = [ "toString", "valueOf", "constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString" ];
-        
-        }());
+        var protoprops = [ "toString", "valueOf", "constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString" ];
+    
+    }());
 
 The open parenthesis before function is required because without it, the JS interpreter tries to parse the function keyword as a function declaration statement. With the parenthesis, the interpreter correctly recognizes this as a function definition expression. It is idiomatic to use the parentheses, even when they are not required, around a function that is to be invoked immediately after being defined.
 
@@ -268,84 +269,86 @@ Every function invocation has a this value, and a closure cannot access the this
         fn.call(o, 1, 2)
         fn.apply(o, [1, 2])
         
- - bind() was added in ECMAScript 5, when you invoke the bind() method on a function and pass an object, the method returns a new function. Invoking the new function (as a function) invokes the original function as a method of the object. Any arguments you pass to the new function are passed to the original function.
+bind() was added in ECMAScript 5, when you invoke the bind() method on a function and pass an object, the method returns a new function. Invoking the new function (as a function) invokes the original function as a method of the object. Any arguments you pass to the new function are passed to the original function.
 
-        function fn(y) {
-            return this.x + y;
-        }
-        var o = { x: 1 };
-        var g = f.bind(o);
-        g(2);               // => 3
+    function fn(y) {
+        return this.x + y;
+    }
+    var o = { x: 1 };
+    var g = f.bind(o);
+    g(2);               // => 3
  
  The ECMAScript 5 bind() method does more than just bind a function. It also performs partial applicaton: any arguments you pass to bind() after the first bound along with the this value.
         
-        var sum = function(x, y) { return x + y; }
-        var succ = sum.bind(null, 1);
-        succ(2)                                 // => 3
+    var sum = function(x, y) { return x + y; }
+    var succ = sum.bind(null, 1);
+    succ(2)                                 // => 3
 
-        function fn(y, z) {
-            return this.x + y + z;
-        }
-        var g = fn.bind({ x: 1 }, 2);
-        g(3);                                   // => 6
+    function fn(y, z) {
+        return this.x + y + z;
+    }
+    var g = fn.bind({ x: 1 }, 2);
+    g(3);                                   // => 6
 
-        
-        // The original ECMAScript 5 bind() does have some features that cannot be simulated with this ECMAScript 3 code.
-        // 1) The origina returns a function object with its length property properly set to the 
-        // arity of the ound function minus the number of bound arguments (but not less than zero).
-        // 2) The bind can be used for partial application of constructor functions. If the function returned by
-        // bind() is used as a contructor, the this passed to bind() is ignored, and the original function is invoked as
-        // a constructor, with some arguments already bound. 
-        // Functions returned by the bind() method od not have a prototype property (the prototype property of regular
-        // functions cannot be deleted) and objects created when these bound functions are used as constructors inherit 
-        // from the prototype of the original, unbound constructor. Also, a bound constructor works just like the unbound
-        // constructor for the purpose of the instaceof operator
+    
+    // The original ECMAScript 5 bind() does have some features that cannot be simulated with this ECMAScript 3 code.
+    // 1) The origina returns a function object with its length property properly set to the 
+    // arity of the ound function minus the number of bound arguments (but not less than zero).
+    // 2) The bind can be used for partial application of constructor functions. If the function returned by
+    // bind() is used as a contructor, the this passed to bind() is ignored, and the original function is invoked as
+    // a constructor, with some arguments already bound. 
+    // Functions returned by the bind() method od not have a prototype property (the prototype property of regular
+    // functions cannot be deleted) and objects created when these bound functions are used as constructors inherit 
+    // from the prototype of the original, unbound constructor. Also, a bound constructor works just like the unbound
+    // constructor for the purpose of the instaceof operator
 
-        Function.prototype.bind = function(o /*, args */) {
-            var self = this, boundArgs = arguments;
-            return function () {
-                var args = [ ], i;
-                
-                for (i = 1; i < boundArgs.length; i++) {
-                    args.push(boundArgs[i]);
-                }
-                for (i = 0; i < arguments.length; i++) {
-                    args.push(arguments[i]);
-                }
-
-                return self.apply(o, args);
+    Function.prototype.bind = function(o /*, args */) {
+        var self = this, boundArgs = arguments;
+        return function () {
+            var args = [ ], i;
+            
+            for (i = 1; i < boundArgs.length; i++) {
+                args.push(boundArgs[i]);
             }
+            for (i = 0; i < arguments.length; i++) {
+                args.push(arguments[i]);
+            }
+
+            return self.apply(o, args);
         }
+    }
 
 - partial application is sometimes called currying.
 
-- The Function() constructor
+The Function() constructor
 
-        var f = new Function("x", "y", "return x * y;");
-    
+    var f = new Function("x", "y", "return x * y;");
+
+
  - The Function() constructor allows JS functions to be dynamically created and compiled at runtime.
  - The Function() constructor parses the function body and creates a new function object each time it is called. If the call to the constructor appears within a loop or within a frequently called function, this process can be inefficient. By contrast, nested functions and function definition expressions that appear within loops are not recompiled each time they are encountered.
  - The functions it creates do not use lexical scoping; instead, they are always compiled as if they were top-level functions.
 
-        var scope = "global";
-        function constructFunction() {
-            var scope = "local";
-            return new Function("return scope");
-        }
+---
+    var scope = "global";
+    function constructFunction() {
+        var scope = "local";
+        return new Function("return scope");
+    }
 
-        constructFunction()();          // => "global"
+    constructFunction()();          // => "global"
 
 #### Memoization
 
-        function memoize(f) {
-            var cache = { };
-            return function() {
-                var key = arguments.length + Array.prototype.join.call(arguments, ",")
-                if (key in cache) {
-                    return cache[key];
-                }
-                return cache[key] = f.apply(this, arguments);
+    function memoize(f) {
+        var cache = { };
+        return function() {
+            var key = arguments.length + Array.prototype.join.call(arguments, ",")
+            if (key in cache) {
+                return cache[key];
             }
+            return cache[key] = f.apply(this, arguments);
         }
+    }
 
 

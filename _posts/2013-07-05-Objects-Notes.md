@@ -7,7 +7,8 @@ title: Object notes
 
 # JS Object
 
-My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
+
+Knowledge from [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 
  An Object is an unordered collection of properties, each of which has a name and a value. Property names are strings, so we can say that object map strings to values. This string-to-value mapping goes by various names: "hash", "hashtable", "dictionary" or "associative array". An Object is more than a simple string-to-value map, however.
  A JS Object also inherits the properties of another object, know as its "prototype".
@@ -311,5 +312,3 @@ Object.preventExtensions(), Object.seal(), and Object.freeze() all return the ob
  - Object.create(): use the first argument to that function, may be null, as their prototype
 
 
-
-A lot of knowledge from: [JS Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)

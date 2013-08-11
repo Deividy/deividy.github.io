@@ -7,7 +7,7 @@ title: JS Classes and Modules notes
 
 # JS Classes and Modules
 
-My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
+Knowledge from [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 
  In JS, classes are based on JS's prototype-based inheritance mechanism. If two objects inherit properties from the same prototype object, then we say that they are instances of the same class.
  One of the most important features of JS classes is that the are dynamically extendable.
@@ -19,32 +19,32 @@ My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://s
  
  The prototype property of the constructor is used as the prototype of the new object. This means that all objects created with the same constructor inherit from the same object and are therefore members of the same class.
 
-        function Person(name) { 
-            this.name = name;    
+    function Person(name) { 
+        this.name = name;    
+    }
+    Person.prototype = {
+        isMe: function () {
+            return this.name == 'Deividy';
         }
-        Person.prototype = {
-            isMe: function () {
-                return this.name == 'Deividy';
-            }
-        }
-        Person.prototype.toString = function() {
-            return "Noo!";
-        }
+    }
+    Person.prototype.toString = function() {
+        return "Noo!";
+    }
 
-        p = new Person('John');
-        console.log(p instanceof Person);                                // => true
-        console.log(p.constructor === Person);                           // => false
-        console.log(p.constructor.prototype === Person.prototype)        // => false
-        console.log(p.prototype === Person)                              // => false
-        console.log(p.prototype === Person.prototype)                    // => false
-        console.log(p.__proto__ === Person)                              // => ralse
+    p = new Person('John');
+    console.log(p instanceof Person);                                // => true
+    console.log(p.constructor === Person);                           // => false
+    console.log(p.constructor.prototype === Person.prototype)        // => false
+    console.log(p.prototype === Person)                              // => false
+    console.log(p.prototype === Person.prototype)                    // => false
+    console.log(p.__proto__ === Person)                              // => ralse
 
 
-        var F = function() {};
-        F.prototype.constructor === F;                                  // => true
+    var F = function() {};
+    F.prototype.constructor === F;                                  // => true
 
 
-        Person.prototype > Constructor = Person()
+    Person.prototype > Constructor = Person()
 
 
 **Constructor Object**
@@ -60,18 +60,17 @@ My notes  about the reading of [JavaScript Defiitive Guide 6th Edition](http://s
 First, write a constructor function that sets instance properties on new objects. Second, define instance methods on the prototype object of the constructor. Third, define class fields and class properties on the constructor itself. 
 
 <!--break-->
-        // Constructor
-        function Complex() { }
-        
-        // Public instance method
-        Complex.prototype.toString = function () {};
+    // Constructor
+    function Complex() { }
+    
+    // Public instance method
+    Complex.prototype.toString = function () {};
 
-        // Static
-        Complex.parse = function (s) { return s; };
-        
-        // Underscore to indicate private
-        Complex._format = /^\{([^,]+),([^}]+)\}$/;
-
+    // Static
+    Complex.parse = function (s) { return s; };
+    
+    // Underscore to indicate private
+    Complex._format = /^\{([^,]+),([^}]+)\}$/;
 
  - JS prototype-based inheritance mechanism is dynamic: an object inherits properties from its prototype, EVEN if the protype changes after the object is created.
  - It is possible to add methods to Object.prototype, making them available on all objects. (Not reocommended)
@@ -88,34 +87,35 @@ First, write a constructor function that sets instance properties on new objects
 
  - One approach to duck-typing is laissez-faire: we simply assume that our input objects implement the necessary methods and perform no checking at all.
 
+---
 
-        functions quacks (o /*, ... */) {
-            for (var i = 1; i < arguments.length; i++) {
-                var arg = arguments[i];
+    functions quacks (o /*, ... */) {
+        for (var i = 1; i < arguments.length; i++) {
+            var arg = arguments[i];
+            
+            switch(typeof arg) {
+                case 'string':
+                    if (typeof o[arg] !== "function") {
+                        return false;
+                    }
+                    continue;
                 
-                switch(typeof arg) {
-                    case 'string':
-                        if (typeof o[arg] !== "function") {
+                case 'function':
+                    arg = arg.prototype;
+                
+                case 'object':
+                    for(var m in arg) {
+                        if (typeof arg[m] !== "function") {
+                            continue;
+                        }
+                        if (typeof o[m] !== "function") {
                             return false;
                         }
-                        continue;
-                    
-                    case 'function':
-                        arg = arg.prototype;
-                    
-                    case 'object':
-                        for(var m in arg) {
-                            if (typeof arg[m] !== "function") {
-                                continue;
-                            }
-                            if (typeof o[m] !== "function") {
-                                return false;
-                            }
-                        }
-                }
+                    }
             }
-            return true;
         }
+        return true;
+    }
 
     
  - A set is a data structure that represents an unordered collection of values, with no duplicates.
@@ -124,42 +124,42 @@ First, write a constructor function that sets instance properties on new objects
  when the type is defined. In C and languages derived from it, enumerated types are declared with 
  the enum keyword.
 
-        function enumeration(namesToValues) {
-            var enumeration = function() { throw "Can't Instantiate Enumerations" };
-            
-            var proto = enumeration.prototype = {
-                constructor: enumeration,
-                toString: function() { 
-                    return this.name; 
-                },
-                valueOf: function() { 
-                    return this.value; 
-                },
-                toJSON: function() { 
-                    return this.name; 
-                }
-            };
-
-            enumeration.values = [ ];
-
-            for(name in namesToValues) {
-                var e = Object.create(proto);
-                
-                e.name = name;
-                e.value = namesToValues[name];
-                
-                enumeration[name] = e;
-                enumeration.values.push(e);
+    function enumeration(namesToValues) {
+        var enumeration = function() { throw "Can't Instantiate Enumerations" };
+        
+        var proto = enumeration.prototype = {
+            constructor: enumeration,
+            toString: function() { 
+                return this.name; 
+            },
+            valueOf: function() { 
+                return this.value; 
+            },
+            toJSON: function() { 
+                return this.name; 
             }
+        };
 
-            enumeration.foreach = function(f, c) {
-                for(var i = 0; i < this.values.length; i++) {
-                    f.call(c, this.values[i]);
-                }
-            };
+        enumeration.values = [ ];
 
-            return enumeration;
+        for(name in namesToValues) {
+            var e = Object.create(proto);
+            
+            e.name = name;
+            e.value = namesToValues[name];
+            
+            enumeration[name] = e;
+            enumeration.values.push(e);
         }
+
+        enumeration.foreach = function(f, c) {
+            for(var i = 0; i < this.values.length; i++) {
+                f.call(c, this.values[i]);
+            }
+        };
+
+        return enumeration;
+    }
 
 
 ### Standard Conversion Methods
@@ -186,24 +186,24 @@ First, write a constructor function that sets instance properties on new objects
  - Prevent Class Extensions
  - Property Descriptors
 
-        function StringSet() {
-            this.set = Object.create(null);
-            this.n = 0;
-            this.add.apply(this, arguments);
-        }
+    function StringSet() {
+        this.set = Object.create(null);
+        this.n = 0;
+        this.add.apply(this, arguments);
+    }
 
-        StringSet.prototype = Object.create(AbstractWritableSet.prototype, {
-            constructor: { value: StringSet },
-            contains: { value: function(x) { return x in this.set; } }    
-        });
+    StringSet.prototype = Object.create(AbstractWritableSet.prototype, {
+        constructor: { value: StringSet },
+        contains: { value: function(x) { return x in this.set; } }    
+    });
 
 ## Modules
 
-        var Cool = (function() {
-            function Cool() { }
-            function private() {
-                return "I'm private";
-            }
-            Cool.prototype.privateReturn = private();
-            return Cool;
-        }());
+    var Cool = (function() {
+        function Cool() { }
+        function private() {
+            return "I'm private";
+        }
+        Cool.prototype.privateReturn = private();
+        return Cool;
+    }());

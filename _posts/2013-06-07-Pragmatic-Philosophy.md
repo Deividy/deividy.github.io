@@ -191,36 +191,8 @@ When prototyping whe can ignore some details:
 Data languages produce some form of data structure used by an application. These languages are often used to represent configuration information.
 
 Imperative languages take this a step further. 
-
-##### Exercises!
     
-    var commands = { };
-    function addCommand(name, direction) {
-        commands[name] = direction;
-    }
-    function moveTo(command, squares) {
-        if (isSelection(commands[command])) {
-            return execSelect(commands[command], squares);
-        }
-        goTo(commands[command], squares);
-    }
-    function goTo(direction, squares) {
-
-    }
-
-    addCommand('P', 'select');
-    addCommand('D', 'down');
-    addCommand('W', 'west');
-    addCommand('N', 'north');
-    addCommand('S', 'south');
-    addCommand('U', 'unselect');
-
-    moveTo('P', 2);
-    moveTo('D');
-
-- BNF Grammar ? Backus Naur Form Pag. 76 Exercises, 5 to 8
- Back to exercises when I know exactly what is a BNF Grammar
- 
+- BNF Grammar ? Backus Naur Form Pag.
 
 ### Estimating
 
@@ -435,7 +407,7 @@ Assumptions that aren't based on well-established facts are the bane of all proj
 
  - Nested loops. If you nest a loop inside another, then your algorithm becomes O(m × n), where m and n are the two loops' limits. This commonly occurs in simple sorting algorithms, such as bubble sort, where the outer loop scans each element in the array in turn, and the inner loop works out where to place that element in the sorted result. Such sorting algorithms tend to be O(n2).
 
- - Binary chop. If your algorithm halves the set of things it considers each time around the loop, then it is likely to be logarithmic, O(lg(n)) (see Exercise 37). A binary search of a sorted list, traversing a binary tree, and finding the first set bit in a machine word can all be O(lg(n)).
+ - Binary chop. If your algorithm halves the set of things it considers each time around the loop, then it is likely to be logarithmic, O(lg(n)). A binary search of a sorted list, traversing a binary tree, and finding the first set bit in a machine word can all be O(lg(n)).
 
  - Divide and conquer. Algorithms that partition their input, work on the two halves independently, and then combine the result can be O(n lg(n)). The classic example is quicksort, which works by partitioning the data into two halves and recursively sorting each. Although technically O(n2), because its behavior degrades when it is fed sorted input, the average runtime of quicksort is O(n lg(n)).
 
@@ -583,8 +555,9 @@ Let the computer do the repetitious - it will do a better job of it than we woul
  - Code a little, test a little.
  - The time it takes to produce this test code is worth the effortr
 
-# Just because you have finished hacking out a piece of code doesn't mean you can go tell your boss or your client that it's done. IT'S NOT! 
-# First of all, code is never really done. More importantly, you can't claim that it is usable by anyone until it passes all of the available tests.
+#### Just because you have finished hacking out a piece of code doesn't mean you can go tell your boss or your client that it's done. IT'S NOT!
+
+#### First of all, code is never really done. More importantly, you can't claim that it is usable by anyone until it passes all of the available tests.
 
  - What to test
  - How to test
