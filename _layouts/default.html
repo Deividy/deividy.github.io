@@ -28,6 +28,9 @@
         <!-- MAIN CONTENT -->
         <div id="main_content_wrap" class="outer">
             <section id="main_content" class="inner">
+                {% if page.date %}
+                    <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+                {% endif %}
                 {{ content }}
                 {% if page.comments %}
                 <p>&nbsp;</p>
