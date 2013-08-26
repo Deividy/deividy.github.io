@@ -47,4 +47,6 @@ nav ul li:last-child {
 nav ul li a {
     color: #FFF;
 }
-
+ul li {
+    list-style: none;
+}
