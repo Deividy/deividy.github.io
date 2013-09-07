@@ -34,3 +34,14 @@ Take what varies and "encapsulate" it so it won't affect the rest of your code.
 - No variable should hold a reference to a concrete class.
 - No class should derive from a concrete class.
 - No method should override an implemented method of any of its based classes.
+
+---
+
+### Least Knowledge (Law of Demeter)
+**Talk only to your immediate friends.**
+
+Only invoke methods that belongs to:
+- The object itself
+- Objects passed in as a parameter to the method
+- Any object the method creates or instantiates
+- Any components of the object
