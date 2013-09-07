@@ -49,3 +49,12 @@ Encapsulates a request as an object, thereby letting you parameterize other obje
 
 ---
 
+### Adapter;
+Converts the interface of a class into another interface the clients expects. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+
+---
+
+### Facade;
+Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+
+---
