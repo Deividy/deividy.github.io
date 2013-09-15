@@ -59,7 +59,7 @@ Provides an unified interface to a set of interfaces in a subsystem. Facade defi
 
 ---
 
-### Templaste Method;
+### Template Method;
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
 ---
