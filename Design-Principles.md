@@ -53,3 +53,8 @@ Only invoke methods that belongs to:
 **Don't call us, we'll call you**
 
 ---
+
+### Single Responsibility
+**A class should have only one reason to change**
+
+---
