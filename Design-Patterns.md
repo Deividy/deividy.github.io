@@ -11,6 +11,9 @@ layout: default
 > 
 > _Christopher Alexander_
 
+
+> A Pattern is a solution to a problem in a context.
+
 ---
 
 ### Strategy;
@@ -81,5 +84,13 @@ Allows an object to alter its behavior when its internal state changes. The obje
 
 ### Proxy;
 Provides a surrogate or placeholder for another object to controll access to it.
+
+---
+
+### Compound Patterns;
+A Compound Pattern combines two or more patterns into a solution that solves a recurring or general pattern.
+
+#### MVC;
+The MVC is a compound pattern consisting of the Observer, Strategy and Composite patterns.
 
 ---
