@@ -87,6 +87,11 @@ Provides a surrogate or placeholder for another object to controll access to it.
 
 ---
 
+### Builder;
+Separate the construction of a complex object from its representation allowing the same construction process to create various representations.
+
+---
+
 ### Compound Patterns;
 A Compound Pattern combines two or more patterns into a solution that solves a recurring or general pattern.
 
