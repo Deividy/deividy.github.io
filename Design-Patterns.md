@@ -92,6 +92,11 @@ Separate the construction of a complex object from its representation allowing t
 
 ---
 
+### Prototype;
+Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+
+---
+
 ### Compound Patterns;
 A Compound Pattern combines two or more patterns into a solution that solves a recurring or general pattern.
 
