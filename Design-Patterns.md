@@ -104,3 +104,16 @@ A Compound Pattern combines two or more patterns into a solution that solves a r
 The MVC is a compound pattern consisting of the Observer, Strategy and Composite patterns.
 
 ---
+
+### Messaging Patterns
+A Messaging Pattern is a network-oriented architectural pattern which describes how two different parts of a message passing system connect and communicate with each other.
+
+#### Request - Reply
+
+#### Publish - Subscribe
+
+#### Push - Pull
+
+#### Exclusive pair
+
+---
