@@ -1,9 +1,9 @@
 # Site settings
 title: Deividy' blog
-email: your-email@yourdomain.com
-description: "Write your site description here. It will be used as your sites meta description as well!"
+email: deividyz@gmail.com
+description: "A blog about code and random stuff"
 baseurl: ""
-url: "http://yourdomain.com"
+url: "http://deividy.com"
 twitter_username: deividyz
 github_username:  Deividy
 facebook_username: deividyz
