@@ -1,12 +1,12 @@
 ---
 
-layout: default
+layout: post
 title: JavaScript Hoisting
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JavaScript Hoisting
 
 Definições de variáveis e funções, são 'hoisted', ao topo da função onde foram definidos.
 

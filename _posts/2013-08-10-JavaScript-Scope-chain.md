@@ -1,12 +1,12 @@
 ---
 
-layout: default
+layout: post
 title: JavaScript Scope Chain
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JavaScript Scope Chain
 
 O unico jeito de criar escopo em JavaScript é definindo uma função, sempre que uma função é 
 definida ela cria um escopo, esse escopo tem uma ligação com o escopo de onde a função foi definida,

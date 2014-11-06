@@ -1,33 +1,46 @@
 ---
-layout: default
-title: Deividy's coding blog
+layout: page
+description: "A blog about code and random stuffs"
+header-img: "img/home-bg.jpg"
 ---
 
-
-<div class="hfeed">
-    {% for post in paginator.posts %}
-        <article id='{{ post.title }}' class="hentry entry">
-            <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
-            {{ post.content | split:'<!--break-->' | first }}
-            {% if post.content contains '<!--break-->' %}
-                <a href="{{ post.url }}">read more</a>
-            {% else %}
-                <a href="{{ post.url }}">comment</a>
-            {% endif %}
-        </article>
-    {% endfor %}
-</div>
-
-<!-- Pagination links -->
-<div class="pagination">
-    {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-            <a href="/">Anterior</a>
-        {% else %}
-            <a href="{{ paginator.previous_page_path }}">Anterior</a>
+{% for post in paginator.posts %}
+<div id='{{ post.title }}' class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
-        &nbsp; &nbsp; &nbsp; 
-    {% endif %}    {% if paginator.next_page %}
-        <a href="/page{{ paginator.next_page }}" class="next">Próximo</a>
-    {% endif %}
+        <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+    </a>
+
+    {{ post.content | split:'<!--break-->' | first }}
+
+        {% if post.content contains '<!--break-->' %}
+            <a href="{{ post.url }}" class='btn btn-default'>read more</a>
+        {% else %}
+            <a href="{{ post.url }}" class='btn btn-default'>comment</a>
+        {% endif %}   
 </div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

@@ -1,7 +1,8 @@
 ---
 
 title: Design Principles
-layout: default
+layout: page
+header-img: "img/principle.jpg"
 
 ---
 

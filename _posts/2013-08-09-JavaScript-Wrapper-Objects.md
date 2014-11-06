@@ -1,12 +1,12 @@
 ---
 
-layout: default
+layout: post
 title: JavaScript Wrapper Objects
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JavaScript Wrapper Objects
 
 Tudo em JavaScript, com exceção de **null** e **undefined**, é um objeto, até mesmo os valores primitivos 
 (String, Number or Boolean) herdam de **Object.prototype**. 

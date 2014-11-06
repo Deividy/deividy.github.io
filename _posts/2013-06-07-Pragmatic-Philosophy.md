@@ -1,12 +1,12 @@
 ---
 
-layout: default
+layout: post
 title: Pragmatic Philosophy
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# Pragmatic Philosophy
 
 This is my study book of [Pragmatic Programmer (The Bible)](http://pragprog.com/the-pragmatic-programmer).
 

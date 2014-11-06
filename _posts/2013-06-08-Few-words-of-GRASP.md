@@ -1,12 +1,12 @@
 ---
 
-layout: default
+layout: post
 title: A few words about GRASP
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# A few words about GRASP
 
 GRASP = General Responsibility Assignment Software Patterns
 

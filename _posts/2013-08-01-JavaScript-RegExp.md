@@ -1,12 +1,12 @@
 ---
 
-layout: default
-title: Study book of Statements
+layout: post
+title: Regular Expression
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# Regular Expression
 
 This is my study book of [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 

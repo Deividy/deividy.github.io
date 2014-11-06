@@ -1,12 +1,12 @@
 ---
 
-layout: default
-title: CoffeeScript Accelerated JavaScript Development
+layout: post
+title: CoffeeScript Notes 
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# CoffeeScript Notes
 
 This is my study book of [CoffeeScript Accelerated JavaScript Development](http://pragprog.com/book/tbcoffee/coffeescript).
 

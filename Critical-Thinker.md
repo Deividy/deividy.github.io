@@ -1,7 +1,8 @@
 ---
 
-layout: default
+layout: page
 title: Critical Thinker
+header-img: "img/thinking.jpg"
 
 ---
 

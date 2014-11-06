@@ -1,12 +1,12 @@
 ---
 
-layout: default
-title: Lexical Structure Notes
+layout: post
+title: JS Lexical Structure Notes
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JS Lexical Structure Notes
 
 **Unicode** character set, **case-sensitive**, whitespace and line breaks are ignored. The JS Interpreter
 assumes that the source code it is interpreting has already been normalized and makes no attempt to normalize identifiers,

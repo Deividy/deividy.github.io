@@ -1,12 +1,12 @@
 ---
 
-layout: default
-title: Object notes
+layout: post
+title: JS Object notes
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JS Object
 
 This is my study book of [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 

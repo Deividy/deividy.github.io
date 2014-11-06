@@ -1,13 +1,13 @@
 ---
 
-layout: default
-title: Function notes
+layout: post
+title: JS Function notes
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
 
-# JS Function
- 
 This is my study book of [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 
  JS functions definitions can be nested within other functions, and they have access to any variable that are in scope where they are defined. This means that JS functions are closures. (I got the power!)

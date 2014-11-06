@@ -1,12 +1,12 @@
 ---
 
-layout: default
+layout: post
 title: JS Classes and Modules notes
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JS Classes and Modules
 
 This is my study book of [JavaScript Defiitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do)
 

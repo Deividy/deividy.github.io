@@ -1,12 +1,12 @@
 ---
 
-layout: default
-title: Array Notes
+layout: post
+title: JS Array Notes
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
-
-# JS Array
 
 This is my study book of [JavaScript Definitive Guide 6th Edition](http://shop.oreilly.com/product/9780596805531.do).
 

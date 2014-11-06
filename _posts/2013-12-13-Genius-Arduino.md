@@ -1,15 +1,15 @@
 ---
 
-layout: default
+layout: post
 title: Fun with Arduino :)
 comments: true
+header-img: "img/coding.jpg"
+author: Deividy Metheler Zachetti
 
 ---
 
-# Fun with Arduino :)
-
 ![](https://dl.dropboxusercontent.com/u/104864660/game.jpg)
 
-[https://github.com/Deividy/lab/tree/master/arduino/game-genius](https://github.com/Deividy/lab/tree/master/arduino/game-genius)
+[github source code](https://github.com/Deividy/lab/tree/master/arduino/game-genius)
 
-[http://www.youtube.com/watch?v=ebJKJfkeIY8](http://www.youtube.com/watch?v=ebJKJfkeIY8)
+[video](http://www.youtube.com/watch?v=ebJKJfkeIY8)

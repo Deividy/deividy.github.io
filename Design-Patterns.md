@@ -1,7 +1,8 @@
 ---
 
 title: Design Patterns
-layout: default
+layout: page
+header-img: "img/pattern-blue.jpg"
 
 ---
 
