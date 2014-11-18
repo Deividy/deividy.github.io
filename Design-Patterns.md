@@ -1,6 +1,6 @@
 ---
 
-title: Patterns
+title: Design Patterns
 layout: page
 header-img: "img/pattern-blue.jpg"
 
@@ -11,97 +11,100 @@ header-img: "img/pattern-blue.jpg"
 > "Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice"
 > 
 > _Christopher Alexander_
->
-> A Pattern is a solution to a problem in a context.
 
 ---
 
-### Strategy;
+### Strategy
 Defines a family of algorithms encapsulates each one, and make them interchangeable.
 Strategy lets the algorithm vary independetly from clients that use it.
 
 ---
 
-### Observer;
+### Observer
 Defines a one-to-many dependency between objects so that when one object changes state, all it's dependents are notified and updated automatically.
 
 ---
 
-### Decorator;
+### Decorator
 Attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
 ---
 
-### Factory Method;
+### Factory Method
 Define an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
 ---
 
-### Abstract Factory;
+### Abstract Factory
 Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
 ---
 
-### Singleton;
+### Singleton
 Ensures a class has only one instance, and provides a global point of access to it.
 
---
+---
 
-### Command;
+### Command
 Encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.
 
 ---
 
-### Adapter;
+### Adapter
 Converts the interface of a class into another interface the clients expects. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
 
 ---
 
-### Facade;
+### Facade
 Provides an unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
 
 ---
 
-### Template Method;
+### Template Method
 Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
 ---
 
-### Iterator;
+### Iterator
 Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 
 ---
 
-### Composite;
+### Composite
 Allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
 
 ---
 
-### State;
+### State
 Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
 ---
 
-### Proxy;
+### Proxy
 Provides a surrogate or placeholder for another object to controll access to it.
 
 ---
 
-### Builder;
+### Builder
 Separate the construction of a complex object from its representation allowing the same construction process to create various representations.
 
 ---
 
-### Prototype;
+### Prototype
 Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
 
 ---
 
-### Compound Patterns;
+### Mapping Grammars to Recursive-Descent Recognizers
+Translates a grammar to a recursive-descent recognizer that matchers phrases and sentences in the language specified by grammar.
+
+---
+
+## Compound Patterns
 A Compound Pattern combines two or more patterns into a solution that solves a recurring or general pattern.
 
-#### MVC;
-The MVC is a compound pattern consisting of the Observer, Strategy and Composite patterns.
+### MVC
+The MVC is a compound pattern consisting of the **Observer**, **Strategy** and **Composite** patterns.
 
 ---
 
@@ -115,5 +118,3 @@ A Messaging Pattern is a network-oriented architectural pattern which describes 
 #### Push - Pull
 
 #### Exclusive pair
-
----
